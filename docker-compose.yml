@@ -1,0 +1,16 @@
+version: '3'
+services:
+  k8s-ver:
+    image: k8s_ver_demo:latest
+    container_name: k8s-ver
+    hostname: k8s-ver
+    depends_on:
+      - modbus-server
+    networks:
+      - esx
+    volumes:
+      - ./results:/app/results
+      - ./configuration.py:/app/configuration.py
+
+networks:
+  esx: {}
