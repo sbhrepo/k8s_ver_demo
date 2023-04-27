@@ -19,7 +19,7 @@ jobs:
     - name: build docker image
       run: |
         echo current version is: ${{ env.VERSION }}
-        docker build --rm -t sbh69/k8s_ver_demo:latest -t sbh69/k8s_ver_demo:${{ env.VERSION }} .
+        docker build --rm -t ${{ secrets.DOCKERHUB_USERNAME }}/k8s_ver_demo:latest -t ${{ secrets.DOCKERHUB_USERNAME }}/k8s_ver_demo:${{ env.VERSION }} .
     - name: docker hub push
       run: |
-        docker push sbh69/k8s_ver_demo --all-tags
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/k8s_ver_demo --all-tags
