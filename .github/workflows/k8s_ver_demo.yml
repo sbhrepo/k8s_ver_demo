@@ -19,4 +19,5 @@ jobs:
         make docker
     - name: docker hub push
       run: |
-        docker push sbh69/k8s_ver_demo:latest
+        docker tag k8s_ver_demo $DOCKERHUB_USER/k8s_ver_demo
+        docker push $DOCKERHUB_USER/k8s_ver_demo
