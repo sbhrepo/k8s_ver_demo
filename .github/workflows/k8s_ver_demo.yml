@@ -16,8 +16,7 @@ jobs:
         docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
     - name: build docker image
       run: |
-        make docker
+        docker build --rm -t sbh69/k8s_ver_demo:latest -t sbh69/k8s_ver_demo:1.0.1 .
     - name: docker hub push
       run: |
-        docker tag k8s_ver_demo sbh69/k8s_ver_demo
-        docker push sbh69/k8s_ver_demo
+        docker push sbh69/k8s_ver_demo --all-tags
