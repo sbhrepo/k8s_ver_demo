@@ -12,7 +12,6 @@ jobs:
       env:
         DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USERNAME }}
         DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-        VERSION: ${{  }}
       run: |
         docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
     - name: build docker image
