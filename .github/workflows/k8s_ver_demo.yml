@@ -17,3 +17,6 @@ jobs:
     - name: build docker image
       run: |
         make docker
+    - name: docker hub push
+      run: |
+        docker push $DOCKERHUB_USER/k8s_ver_demo:latest
