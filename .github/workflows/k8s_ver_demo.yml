@@ -8,6 +8,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
+    - name: set env
+      run: echo "VERSION=$(grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' configuration.py)" >> $GITHUB_ENV
     - name: dockerhub login
       env:
         DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -16,7 +18,6 @@ jobs:
         docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
     - name: build docker image
       run: |
-        echo "VERSION=$(grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' configuration.py)" >> $GITHUB_ENV
         echo current version is: ${{ env.VERSION }}
         docker build --rm -t sbh69/k8s_ver_demo:latest -t sbh69/k8s_ver_demo:${{ env.VERSION }} .
     - name: docker hub push
