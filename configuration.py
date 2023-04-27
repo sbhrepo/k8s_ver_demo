@@ -1,4 +1,4 @@
-version = "1.0.0"
+version = "1.0.1"
 host_path = "./results"
 local_path = "/app/results"
 file_name = "version.txt"
