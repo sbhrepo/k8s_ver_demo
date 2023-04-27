@@ -64,7 +64,8 @@ class process_k8s_ver_demo(metaclass = PROCSingleton):
         running = False
     
       self.createFile(self.path+"/"+self.file)
-      self.updateFile(self.path+"/"+self.file)
+      #self.updateFile(self.path+"/"+self.file)
+      self.updateVersion(self.path+"/"+self.file)
 
       sleep(self.interval)
 
