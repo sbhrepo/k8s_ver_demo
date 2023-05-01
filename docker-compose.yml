@@ -6,9 +6,8 @@ services:
     hostname: k8s-ver
     networks:
       - esx
-    volumes:
-      - ./results:/app/results
-      - ./configuration.py:/app/configuration.py
+    ports:
+      - 8080:8080
 
 networks:
   esx: {}
