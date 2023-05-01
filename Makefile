@@ -5,4 +5,4 @@ override tag=latest
 endif
 
 docker:
-	docker build --rm -t k8s_ver_demo:${tag} .
+	DOCKER_BUILDKIT=1 docker build --rm -t k8s_ver_demo:${tag} .
