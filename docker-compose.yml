@@ -7,7 +7,7 @@ services:
     networks:
       - esx
     ports:
-      - 8080:8080
+      - 30001:8080
 
 networks:
   esx: {}
