@@ -1,13 +1,45 @@
 version: '3'
 services:
-  k8s-ver:
+  k8s-ver-1:
     image: sbh69/k8s-ver-demo:latest
-    container_name: sbh69/k8s-ver-demo:latest
-    hostname: k8s-ver
+    container_name: k8s-ver-demo-1
+    hostname: k8s-ver-1
     networks:
       - esx
     ports:
       - 30001:8080
+  k8s-ver-2:
+    image: sbh69/k8s-ver-demo:latest
+    container_name: k8s-ver-demo-2
+    hostname: k8s-ver-2
+    networks:
+      - esx
+    ports:
+      - 30002:8080
+  k8s-ver-3:
+    image: sbh69/k8s-ver-demo:latest
+    container_name: k8s-ver-demo-3
+    hostname: k8s-ver-3
+    networks:
+      - esx
+    ports:
+      - 30003:8080
+  k8s-ver-4:
+    image: sbh69/k8s-ver-demo:latest
+    container_name: k8s-ver-demo-4
+    hostname: k8s-ver-4
+    networks:
+      - esx
+    ports:
+      - 30004:8080
+  k8s-ver-5:
+    image: sbh69/k8s-ver-demo:latest
+    container_name: k8s-ver-demo-5
+    hostname: k8s-ver-5
+    networks:
+      - esx
+    ports:
+      - 30005:8080
 
 networks:
   esx: {}
