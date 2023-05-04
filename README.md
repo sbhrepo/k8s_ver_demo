@@ -11,3 +11,7 @@ make docker
 ```sh
 docker-compose up
 ```
+
+```sh
+docker-compose --env-file .env.version up
+```
