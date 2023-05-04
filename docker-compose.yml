@@ -1,8 +1,8 @@
 version: '3'
 services:
   k8s-ver:
-    image: k8s_ver_demo:latest
-    container_name: k8s-ver
+    image: sbh69/k8s-ver-demo:latest
+    container_name: sbh69/k8s-ver-demo:latest
     hostname: k8s-ver
     networks:
       - esx

@@ -23,7 +23,7 @@ jobs:
     - name: build docker image
       run: |
         echo current version is: ${{ env.VERSION }}
-        docker buildx build --rm --platform linux/arm64,linux/amd64 -t ${{ secrets.DOCKERHUB_USERNAME }}/k8s_ver_demo:latest -t ${{ secrets.DOCKERHUB_USERNAME }}/k8s_ver_demo:${{ env.VERSION }} --push .
+        docker buildx build --rm --platform linux/arm64,linux/amd64 -t ${{ secrets.DOCKERHUB_USERNAME }}/k8s-ver-demo:latest -t ${{ secrets.DOCKERHUB_USERNAME }}/k8s-ver-demo:${{ env.VERSION }} --push .
     #- name: docker hub push
     #  run: |
     #    docker push ${{ secrets.DOCKERHUB_USERNAME }}/k8s_ver_demo --all-tags
